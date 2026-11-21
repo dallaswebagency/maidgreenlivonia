@@ -522,6 +522,21 @@ background:linear-gradient(var(--lime),var(--lime)) top left/22px 2px,linear-gra
 }
 @media (max-width:360px){.svc-grid{grid-template-columns:1fr}.sb{aspect-ratio:16/10}.sb-tx span{display:block}}
 
+/* mobile polish (QA pass) */
+@media (max-width:720px){
+ .rev-flow{display:flex;gap:12px;height:auto;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-mask:none;mask:none;padding:4px 2px 14px;margin:0 -16px;padding-left:16px;scroll-padding-left:16px;scrollbar-width:none}
+ .rev-flow::-webkit-scrollbar{display:none}
+ .rq-col,.rq-col.down,.rq-track{display:contents}
+ .rq-dup{display:none}
+ .rq{flex:0 0 84%;scroll-snap-align:start}
+ .rq:last-child{margin-right:16px}
+ .rf blockquote{padding-top:22px;padding-right:0;font-size:16px}
+ .rf-q{font-size:72px;top:-4px;right:16px}
+ .hoods .btn,.hood .btn{white-space:nowrap;font-size:14px;padding:14px 16px}
+ .q-pts li span{display:block}
+}
+@media (max-width:420px){.mbar .btn{white-space:nowrap;padding:14px 8px;font-size:14px;gap:6px}}
+
 </style>
 </head>
 <body>
@@ -737,7 +752,7 @@ background:linear-gradient(var(--lime),var(--lime)) top left/22px 2px,linear-gra
     <span class="eyebrow light rv"><svg aria-hidden="true"><use href="#i-leaf"/></svg>Get a Quote</span>
     <h2 class="h2 rv d1" id="quote-h">A fresher space <em>starts here.</em></h2>
     <p class="rv d2">Your satisfaction is our top priority! We proudly offer a 100% Satisfaction Guarantee on all our cleanings.</p>
-    <ul class="q-pts rv d2"><li><svg aria-hidden="true"><use href="#i-check"/></svg>We use eco-friendly, non-toxic products safe for pets and humans.</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>We offer one-time and recurring cleaning services to fit your needs.</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Prefer to talk? Call <a href="tel:+17346486243">734-648-6243</a>.</li></ul>
+    <ul class="q-pts rv d2"><li><svg aria-hidden="true"><use href="#i-check"/></svg>We use eco-friendly, non-toxic products safe for pets and humans.</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>We offer one-time and recurring cleaning services to fit your needs.</li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Prefer to talk? Call <a href="tel:+17346486243">734-648-6243</a>.</span></li></ul>
     <div class="q-cards rv d3">
       <a href="tel:+17346486243"><span><svg aria-hidden="true"><use href="#i-phone"/></svg></span><div><small>Call us</small><b>734-648-6243</b></div></a>
       <a href="mailto:info@maidgreenlivonia.com"><span><svg aria-hidden="true"><use href="#i-mail"/></svg></span><div><small>Email</small><b>info@maidgreenlivonia.com</b></div></a>
