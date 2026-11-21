@@ -136,6 +136,22 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.hp-img,.ck,.hp-seal{animation:none}}
 
+/* promise strip */
+.promise{background:var(--cream);border-bottom:1px solid var(--line);padding:34px 0}
+.pr-g{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+.pr-h{display:flex;align-items:center;gap:14px;padding-right:40px;border-right:1px dashed rgba(16,41,27,.25)}
+.pr-ic{width:52px;height:52px;border-radius:16px;background:var(--forest);color:var(--lime);display:grid;place-items:center;font-size:24px}
+.pr-h b{display:block;font:600 21px/1.1 var(--serif);color:var(--forest)}
+.pr-h small{display:block;margin-top:4px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.pr-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.pr-list li{position:relative;display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 40px 16px 14px;font-weight:700;font-size:14.5px;line-height:1.3;transition:transform .3s,box-shadow .3s}
+.pr-list li:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.pr-i{width:42px;height:42px;border-radius:12px;background:var(--sage);color:var(--green);display:grid;place-items:center;flex:none;font-size:20px}
+.pr-list i{position:absolute;right:12px;top:12px;width:22px;height:22px;border-radius:50%;border:2px solid #cfd8cf;display:grid;place-items:center;transition:background .35s,border-color .35s}
+.pr-list i svg{color:#fff;stroke-width:3;font-size:11px;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .45s .15s}
+.pr-list li.on i{background:var(--green);border-color:var(--green)}
+.pr-list li.on i svg{stroke-dashoffset:0}
+
 /* steps band */
 .steps{background:var(--green);color:#fff;padding:70px 0;position:relative}
 .steps-g{display:grid;grid-template-columns:.9fr 1.6fr;gap:56px;align-items:center}
@@ -333,6 +349,7 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
  .mnav .btn{margin-top:12px}
  .hero-g{grid-template-columns:1fr;min-height:0}.hero-pic{order:0}.hero-pic{min-height:0;aspect-ratio:16/10;overflow:visible}.hp-img{position:absolute}.hero-pic{overflow:hidden}
  .hero-panel{padding:56px 32px 64px;justify-content:center}
+ .pr-g{grid-template-columns:1fr;gap:20px}.pr-h{border-right:0;padding-right:0}.pr-list{grid-template-columns:1fr 1fr}
  .steps-g,.svc-g,.why-g,.areas-top,.areas-g,.story-g,.quote-g,.faq-g{grid-template-columns:1fr;gap:44px}
  .svc-side{position:static}
  .rev-wall{columns:2}
@@ -365,6 +382,7 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
  .why-tiles{grid-template-columns:1fr}
  .wt:nth-child(2),.wt:nth-child(4),.wt:nth-child(2).rv:not(.in),.wt:nth-child(4).rv:not(.in){transform:none}
  .rev-wall{columns:1}
+ .promise{padding:28px 0}.pr-list{grid-template-columns:1fr;gap:10px}.pr-list li{padding:12px 40px 12px 12px}
  .work-strip{gap:12px}.wk:nth-child(even){margin-top:24px}
  .cities{grid-template-columns:1fr}
  .hood{padding:24px}
@@ -463,6 +481,16 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
     </div>
   </div>
 </section>
+
+<section class="promise" aria-label="Every clean includes"><div class="wrap pr-g">
+  <div class="pr-h rv"><span class="pr-ic"><svg aria-hidden="true"><use href="#i-leaf"/></svg></span><div><b>Maid Green Livonia</b><small>Every clean includes</small></div></div>
+  <ul class="pr-list" id="ck">
+    <li class="rv"><span class="pr-i"><svg aria-hidden="true"><use href="#i-leaf"/></svg></span><span class="pr-t">Eco-friendly, non-toxic products</span><i><svg aria-hidden="true"><use href="#i-check"/></svg></i></li>
+    <li class="rv d1"><span class="pr-i"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><span class="pr-t">Vetted and background checked cleaners</span><i><svg aria-hidden="true"><use href="#i-check"/></svg></i></li>
+    <li class="rv d2"><span class="pr-i"><svg aria-hidden="true"><use href="#i-redo"/></svg></span><span class="pr-t">100% satisfaction guarantee</span><i><svg aria-hidden="true"><use href="#i-check"/></svg></i></li>
+    <li class="rv d3"><span class="pr-i"><svg aria-hidden="true"><use href="#i-calendar"/></svg></span><span class="pr-t">Serving Livonia since 2012</span><i><svg aria-hidden="true"><use href="#i-check"/></svg></i></li>
+  </ul>
+</div></section>
 
 <section class="steps" aria-labelledby="steps-h"><div class="wrap steps-g">
   <div class="steps-h"><span class="eyebrow light"><svg aria-hidden="true"><use href="#i-leaf"/></svg>Quick and easy</span><h2 id="steps-h">Looking for the cleaning service in Livonia, MI? <em>Contact us now!</em></h2><p>Book online, call or email us to schedule your cleaning service.</p></div>
@@ -620,7 +648,7 @@ m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
 document.querySelectorAll('.faq details').forEach(function(d){d.addEventListener('toggle',function(){if(d.open)document.querySelectorAll('.faq details').forEach(function(o){if(o!==d)o.open=false})})});
 var f=document.getElementById('qf');
 f.addEventListener('submit',function(e){e.preventDefault();if(!f.reportValidity())return;f.closest('.q-box').classList.add('done')});
-var ck=document.querySelectorAll('#ck li');ck.forEach(function(li,i){setTimeout(function(){li.classList.add('on')},900+i*550)});
+var ckl=document.getElementById('ck');if(ckl){var tick=function(){ckl.querySelectorAll('li').forEach(function(li,i){setTimeout(function(){li.classList.add('on')},300+i*450)})};if(io){var o2=new IntersectionObserver(function(es){if(es[0].isIntersecting){tick();o2.disconnect()}},{threshold:.4});o2.observe(ckl)}else tick()}
 var hq=document.getElementById('hq');
 hq.addEventListener('submit',function(e){e.preventDefault();var sv=hq.querySelector('input[name=hsvc]:checked');
 var sel=f.querySelector('select[name=service]');if(sv&&sel)sel.value=sv.value;
