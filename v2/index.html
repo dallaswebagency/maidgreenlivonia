@@ -170,8 +170,8 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .rvw-nav .ar:hover{background:var(--lime);color:var(--forest);border-color:var(--lime)}
 .rvw-r{position:relative;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:32px;padding:56px 50px 34px}
 .rvw-q{position:absolute;left:34px;top:-30px;font:600 150px/1 var(--serif);color:var(--lime)}
-.rs-wrap{position:relative;min-height:260px}
-.rs{position:absolute;inset:0;margin:0;opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;pointer-events:none}
+.rs-wrap{display:grid}
+.rs{grid-area:1/1;margin:0;opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;pointer-events:none}
 .rs.on{opacity:1;transform:none;pointer-events:auto}
 .rs blockquote{margin:0 0 24px;font:500 italic clamp(19px,2vw,25px)/1.5 var(--serif)}
 .rs figcaption b{display:block;font-size:17px}
@@ -359,7 +359,6 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
  .wy-seal{width:84px;height:84px;right:-6px;top:-24px}
  .rvw-r{padding:46px 22px 26px;border-radius:24px}
  .rvw-q{font-size:110px;left:18px;top:-22px}
- .rs-wrap{min-height:340px}
  .rd{width:38px;height:38px}.rd-row{gap:7px;flex-wrap:nowrap}
  .cv-frame{min-height:0;display:flex;flex-direction:column-reverse}
  .cv-frame iframe{position:relative;height:280px}
@@ -641,7 +640,7 @@ function rv(i){ri=(i+sl2.length)%sl2.length;sl2.forEach(function(s,k){s.classLis
 dots.forEach(function(d,k){d.addEventListener('click',function(){rv(k)})});
 document.getElementById('rvPrev').addEventListener('click',function(){rv(ri-1)});
 document.getElementById('rvNext').addEventListener('click',function(){rv(ri+1)});
-window.addEventListener('resize',fit);setTimeout(fit,300);fit();rv(0);
+rv(0);
 
 // quote wizard
 var qz=document.getElementById('qz'),f=document.getElementById('qzf'),ps=[].slice.call(f.querySelectorAll('.qz-p')),st=[].slice.call(qz.querySelectorAll('.qz-steps li')),qb=document.getElementById('qzBar'),back=document.getElementById('qzBack'),next=document.getElementById('qzNext'),send=document.getElementById('qzSend'),pi=0;
