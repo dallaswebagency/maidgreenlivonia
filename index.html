@@ -8,8 +8,8 @@
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="https://maidgreenlivonia.com/wp-content/uploads/mg-home/hero-1600.webp">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HouseCleaningService","name":"Maid Green Livonia","url":"https://maidgreenlivonia.com/","telephone":"+1-734-648-6243","email":"info@maidgreenlivonia.com","image":"https://maidgreenlivonia.com/wp-content/uploads/mg-home/hero-1600.webp","areaServed":["Livonia, MI","Canton, MI","Plymouth, MI","Westland, MI"],"openingHours":["Mo-Fr 08:00-18:00","Sa 09:00-13:00"],"foundingDate":"2012"}</script>
+<link rel="preload" as="image" href="assets/hero-team.webp" type="image/webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HouseCleaningService","name":"Maid Green Livonia","url":"https://maidgreenlivonia.com/","telephone":"+1-734-648-6243","email":"info@maidgreenlivonia.com","image":"https://maidgreenlivonia.com/wp-content/uploads/mg-home/logo-160.webp","areaServed":["Livonia, MI","Canton, MI","Plymouth, MI","Westland, MI"],"openingHours":["Mo-Fr 08:00-18:00","Sa 09:00-13:00"],"foundingDate":"2012"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What areas do you serve in Livonia, MI?","acceptedAnswer":{"@type":"Answer","text":"We serve all neighborhoods in Livonia and surrounding areas."}},{"@type":"Question","name":"Are your cleaning products harmful to pets?","acceptedAnswer":{"@type":"Answer","text":"We use eco-friendly, non-toxic products safe for pets and humans."}},{"@type":"Question","name":"How can I book a cleaning service?","acceptedAnswer":{"@type":"Answer","text":"Book online, call or email us to schedule your cleaning service."}},{"@type":"Question","name":"Do you offer one-time cleaning services?","acceptedAnswer":{"@type":"Answer","text":"We offer one-time and recurring cleaning services to fit your needs."}},{"@type":"Question","name":"What if I want more than the cleaning?","acceptedAnswer":{"@type":"Answer","text":"Our work is guaranteed; we will make it suitable if you are unsatisfied with our service."}}]}</script>
 <style>
 :root{--forest:#10291B;--green:#2C7A44;--leaf:#8CC63F;--lime:#ABE763;--sun:#F2D118;--paper:#FBFAF4;--cream:#F4F1E6;--sage:#E5EEDC;--ink:#13261A;--muted:#55665B;--line:rgba(16,41,27,.12);--r:22px;--sh:0 18px 50px -24px rgba(16,41,27,.35);--serif:'Fraunces',Georgia,serif;--sans:'Plus Jakarta Sans',system-ui,sans-serif}
@@ -86,11 +86,11 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
 /* hero: quote-first split */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .hero{background:var(--forest)}
-.hero-g{display:grid;grid-template-columns:1.08fr 1fr;min-height:min(calc(100vh - 144px),780px)}
-.hero-pic{position:relative;overflow:hidden;min-height:560px}
-.hp-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:45% 35%;animation:kb 18s ease-out both}
+.hero-g{display:grid;grid-template-columns:1fr 1.08fr;min-height:min(calc(100vh - 144px),780px)}
+.hero-pic{position:relative;overflow:hidden;min-height:560px;order:2}
+.hp-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:42% 40%;animation:kb 18s ease-out both}
 @keyframes kb{from{transform:scale(1.1)}to{transform:scale(1)}}
-.hero-pic::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,rgba(16,41,27,.35)),linear-gradient(0deg,rgba(16,41,27,.45),transparent 40%);pointer-events:none}
+.hero-pic::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,transparent 75%,rgba(16,41,27,.35));pointer-events:none}
 .hp-g{position:absolute;right:28px;top:28px;z-index:2;display:flex;align-items:center;gap:12px;background:#fff;padding:12px 18px;border-radius:16px;box-shadow:var(--sh);text-decoration:none}
 .hp-g b{display:block;font-size:13.5px;margin-bottom:2px}
 .ck{position:absolute;left:40px;bottom:40px;z-index:2;width:min(360px,calc(100% - 80px));background:#fff;border-radius:22px;padding:22px 22px 14px;box-shadow:0 30px 60px -25px rgba(0,0,0,.45);animation:ckin .8s .3s cubic-bezier(.2,.7,.2,1) both}
@@ -129,7 +129,7 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
 .hq-zip{flex:1;display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:0 18px;color:var(--green);min-width:0}
 .hq-zip input{border:0;outline:0;font:600 16px var(--sans);color:var(--ink);width:100%;min-width:0;padding:16px 0;background:transparent}
 .hq-zip:focus-within{box-shadow:0 0 0 3px var(--lime)}
-.hq .btn{flex:none}
+.hq .btn{flex:1}
 .hq-alt{font-size:14px;color:#c9dbc2;margin-top:14px;text-align:center}
 .hq-alt a{color:#fff;font-weight:800}
 .hp-seal{position:absolute;right:28px;top:28px;width:92px;height:92px;z-index:1;animation:spin 26s linear infinite}
@@ -331,7 +331,7 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
  .mnav.open{max-height:560px;padding:10px 20px 24px;border-bottom:1px solid var(--line)}
  .mnav>a:not(.btn){padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700;font-size:17px}
  .mnav .btn{margin-top:12px}
- .hero-g{grid-template-columns:1fr;min-height:0}.hero-pic{min-height:0;aspect-ratio:16/10;overflow:visible}.hp-img{position:absolute}.hero-pic{overflow:hidden}
+ .hero-g{grid-template-columns:1fr;min-height:0}.hero-pic{order:0}.hero-pic{min-height:0;aspect-ratio:16/10;overflow:visible}.hp-img{position:absolute}.hero-pic{overflow:hidden}
  .hero-panel{padding:56px 32px 64px;justify-content:center}
  .steps-g,.svc-g,.why-g,.areas-top,.areas-g,.story-g,.quote-g,.faq-g{grid-template-columns:1fr;gap:44px}
  .svc-side{position:static}
@@ -350,7 +350,7 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
  .hp-g{right:12px;top:12px;padding:8px 12px}.hp-g .g{width:22px;height:22px}
  .hero-pic{overflow:visible}.hp-img{animation:none}
  .ck{left:16px;right:16px;bottom:-70px;width:auto;padding:12px 14px}.ck-h{display:none}.ck ul{display:grid;grid-template-columns:1fr 1fr;column-gap:12px}.ck li{padding:8px 0;font-size:13px;line-height:1.25;gap:8px}.ck li+li{border-top:0}.ck li:nth-child(n+3){border-top:1px solid var(--line)}.ck i{width:22px;height:22px}
- .hero-panel{padding:104px 16px 52px}
+ .hero-panel{padding:40px 16px 52px}
  .hq{padding:16px}.hq-chips{grid-template-columns:repeat(2,1fr)}.hq-chips span{flex-direction:row;justify-content:center;padding:12px 8px}
  .hq-row{flex-direction:column}.hq .btn{width:100%}
  .hp-seal{display:none}
@@ -436,17 +436,8 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
 <section class="hero" aria-labelledby="hero-h">
   <div class="hero-g">
     <div class="hero-pic">
-      <img class="hp-img" src="https://maidgreenlivonia.com/wp-content/uploads/mg-home/hero-1600.webp" alt="Cleaner in a green apron wiping a glass surface" width="1600" height="1067" fetchpriority="high">
+      <picture><source srcset="assets/hero-team.webp" type="image/webp"><img class="hp-img" src="assets/hero-team.jpg" alt="Maid Green cleaning team arriving at a home with supplies" width="1678" height="937" fetchpriority="high"></picture>
       <a class="hp-g" href="https://maps.app.goo.gl/dz457c9LgQ96wKic7" target="_blank" rel="noopener"><svg class="g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2A11.9 11.9 0 0 1 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg><span><b>Google reviews</b><span class="stars" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span></span></a>
-      <div class="ck" id="ck" aria-label="Our promise">
-        <div class="ck-h"><span><svg aria-hidden="true"><use href="#i-leaf"/></svg></span><b>Maid Green Livonia</b><small>Every clean includes</small></div>
-        <ul>
-          <li><i><svg aria-hidden="true"><use href="#i-check"/></svg></i>Eco-friendly, non-toxic products</li>
-          <li><i><svg aria-hidden="true"><use href="#i-check"/></svg></i>Vetted and background checked cleaners</li>
-          <li><i><svg aria-hidden="true"><use href="#i-check"/></svg></i>100% satisfaction guarantee</li>
-          <li><i><svg aria-hidden="true"><use href="#i-check"/></svg></i>Serving Livonia since 2012</li>
-        </ul>
-      </div>
     </div>
     <div class="hero-panel">
       <img class="hp-seal" src="assets/seal.png" alt="100% satisfaction guaranteed" width="120" height="120">
@@ -464,7 +455,6 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
             </div>
           </fieldset>
           <div class="hq-row">
-            <label class="hq-zip"><svg aria-hidden="true"><use href="#i-pin"/></svg><span class="sr">ZIP code</span><input name="hzip" inputmode="numeric" maxlength="5" placeholder="ZIP code" autocomplete="postal-code"></label>
             <button class="btn btn-lime btn-xl" type="submit">Get a Free Quote <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
           </div>
           <p class="hq-alt">Prefer to talk? Call <a href="tel:+17346486243">734-648-6243</a></p>
@@ -632,10 +622,9 @@ var f=document.getElementById('qf');
 f.addEventListener('submit',function(e){e.preventDefault();if(!f.reportValidity())return;f.closest('.q-box').classList.add('done')});
 var ck=document.querySelectorAll('#ck li');ck.forEach(function(li,i){setTimeout(function(){li.classList.add('on')},900+i*550)});
 var hq=document.getElementById('hq');
-hq.addEventListener('submit',function(e){e.preventDefault();var sv=hq.querySelector('input[name=hsvc]:checked'),z=hq.hzip.value.trim();
-var sel=f.querySelector('select[name=service]');if(sv&&sel)sel.value=sv.value;if(z)f.zip.value=z;
-document.getElementById('quote').scrollIntoView({behavior:'smooth'});setTimeout(function(){(z?f.querySelector('input[name=address]'):f.zip).focus({preventScroll:true})},700)});
-hq.hzip.addEventListener('input',function(){this.value=this.value.replace(/\D/g,'')});
+hq.addEventListener('submit',function(e){e.preventDefault();var sv=hq.querySelector('input[name=hsvc]:checked');
+var sel=f.querySelector('select[name=service]');if(sv&&sel)sel.value=sv.value;
+document.getElementById('quote').scrollIntoView({behavior:'smooth'});setTimeout(function(){f.querySelector('input[name=address]').focus({preventScroll:true})},700)});
 var yr=document.getElementById('yr');if(yr)yr.textContent=new Date().getFullYear();
 })();
 
