@@ -47,35 +47,64 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
-/* floating pill nav */
-.nv{position:fixed;left:0;right:0;top:14px;z-index:60;padding:0 16px;transition:top .3s}
-.nv-in{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:22px;padding:8px 10px 8px 18px;border-radius:999px;background:rgba(251,250,244,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 18px 40px -24px rgba(16,41,27,.5);border:1px solid rgba(255,255,255,.6)}
-.nv .lgc{--h:58px}
-.nv-links{display:flex;gap:2px;margin-left:auto}
-.nv-links a{padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;transition:background .2s}
-.nv-links a:hover{background:var(--sage)}
-.nv-call{display:flex;align-items:center;gap:8px;font-weight:800;text-decoration:none;color:var(--forest)}
-.nv-call svg{width:36px;height:36px;padding:9px;border-radius:50%;background:var(--sage);color:var(--green)}
-.nv-cta{padding:13px 20px}
-.nv-burger{display:none;margin-left:auto;width:48px;height:48px;border-radius:50%;border:0;background:var(--forest);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:6px}
-.nv-burger span{width:18px;height:2px;background:#fff;border-radius:2px;transition:transform .3s}
-.nv-burger[aria-expanded=true] span:first-child{transform:translateY(4px) rotate(45deg)}
-.nv-burger[aria-expanded=true] span:last-child{transform:translateY(-4px) rotate(-45deg)}
-.mnav{display:none}
+/* top strip + header */
+.ut{background:var(--forest);color:#cfe0c8;font-size:13.5px}
+.ut-in{max-width:1400px;margin:0 auto;padding:0 32px;min-height:40px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.ut-in>*{display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.ut svg{color:var(--lime)}
+.nv{position:absolute;left:12px;right:12px;top:52px;z-index:60;color:#fff}
+.nv-in{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:28px;padding:18px 32px;border-bottom:1px solid rgba(255,255,255,.18)}
+.nv .lgc{--h:76px;transition:transform .3s}
+.nv-logo{flex:none}
+.nv-links{display:flex;gap:6px;margin:0 auto}
+.nv-links a{position:relative;padding:10px 14px;text-decoration:none;font-weight:600;font-size:15.5px}
+.nv-links a::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:2px;background:var(--lime);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nv-links a:hover::after{transform:scaleX(1)}
+.nv-r{display:flex;align-items:center;gap:18px}
+.nv-call{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:16px}
+.nv-ci{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1.5px solid rgba(255,255,255,.35);font-size:17px;transition:background .3s,color .3s,border-color .3s}
+.nv-call:hover .nv-ci{background:var(--lime);color:var(--forest);border-color:var(--lime)}
+.nv-ct small{display:block;font-size:11.5px;font-weight:600;opacity:.75;letter-spacing:.02em}
+.nv-cta{padding:14px 22px}
+.nv-burger{display:none;width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);background:transparent;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
+.nv-burger span{width:18px;height:2px;background:currentColor;border-radius:2px;transition:transform .3s,opacity .3s}
+.nv-burger[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nv-burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.nv-burger[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* stuck state */
+.nv.stuck{position:fixed;left:0;right:0;top:0;background:rgba(251,250,244,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--forest);box-shadow:0 14px 34px -22px rgba(16,41,27,.5);animation:nvd .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes nvd{from{transform:translateY(-100%)}to{transform:none}}
+.nv.stuck .nv-in{padding:10px 32px;border-bottom:0}
+.nv.stuck .lgc{--h:58px}
+.nv.stuck .nv-ci{border-color:var(--line);background:var(--sage);color:var(--green)}
+.nv.stuck .nv-burger{border-color:var(--line);background:var(--forest);color:#fff}
+/* mobile overlay */
+.mnav{position:fixed;inset:0;z-index:55;background:var(--forest);color:#fff;display:flex;flex-direction:column;justify-content:center;gap:30px;padding:110px 28px 40px;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.mnav.open{opacity:1;visibility:visible}
+.mnav-l{display:grid;gap:4px}
+.mnav-l a{font:600 36px/1.2 var(--serif);text-decoration:none;padding:6px 0;opacity:0;transform:translateY(16px);transition:opacity .4s,transform .4s,color .2s}
+.mnav.open .mnav-l a{opacity:1;transform:none}
+.mnav.open .mnav-l a:nth-child(2){transition-delay:.05s}.mnav.open .mnav-l a:nth-child(3){transition-delay:.1s}.mnav.open .mnav-l a:nth-child(4){transition-delay:.15s}.mnav.open .mnav-l a:nth-child(5){transition-delay:.2s}
+.mnav-l a:hover{color:var(--lime)}
+.mnav-b{display:grid;gap:10px}
+.mnav-h{display:flex;align-items:center;gap:8px;color:#cfe0c8;font-size:14px}.mnav-h svg{color:var(--lime)}
+body.menu-open{overflow:hidden}
+body.menu-open .nv{position:fixed;left:0;right:0;top:0;color:#fff;background:transparent;box-shadow:none;backdrop-filter:none;animation:none}
+body.menu-open .nv .nv-burger{background:transparent;border-color:rgba(255,255,255,.35);color:#fff}
 
 /* hero */
 .hx{padding:12px 12px 0;background:var(--paper)}
-.hx-frame{position:relative;border-radius:32px;overflow:hidden;min-height:min(100vh - 24px,860px);display:flex;align-items:flex-end;isolation:isolate}
+.hx-frame{position:relative;border-radius:32px;overflow:hidden;min-height:min(100vh - 64px,860px);display:flex;align-items:flex-end;isolation:isolate}
 .hx-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 30%;z-index:-2;animation:hxz 14s ease-out both}
 @keyframes hxz{from{transform:scale(1.12)}to{transform:scale(1)}}
-.hx-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(16,41,27,.88) 0%,rgba(16,41,27,.55) 38%,rgba(16,41,27,0) 65%),linear-gradient(0deg,rgba(16,41,27,.6),transparent 40%)}
-.hx-copy{position:relative;color:#fff;padding:140px clamp(24px,5vw,72px) 72px;max-width:920px}
+.hx-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(16,41,27,.7) 0%,rgba(16,41,27,0) 22%),linear-gradient(90deg,rgba(16,41,27,.88) 0%,rgba(16,41,27,.55) 38%,rgba(16,41,27,0) 65%),linear-gradient(0deg,rgba(16,41,27,.6),transparent 40%)}
+.hx-copy{position:relative;color:#fff;padding:170px clamp(24px,5vw,72px) 72px;max-width:920px}
 .hx h1{font-size:clamp(40px,5.4vw,78px);line-height:.98}
 .hx h1 .ln{display:block}
 .hx h1 em{color:var(--lime);font-weight:500}
 .hx-copy>p{font-size:19px;color:#e2eedd;margin:22px 0 32px;max-width:46ch}
 .hx-btns{display:flex;flex-wrap:wrap;gap:12px}
-.hx-g{position:absolute;right:28px;top:110px;display:flex;align-items:center;gap:12px;background:#fff;padding:12px 18px;border-radius:18px;text-decoration:none;box-shadow:var(--sh)}
+.hx-g{position:absolute;right:28px;top:140px;display:flex;align-items:center;gap:12px;background:#fff;padding:12px 18px;border-radius:18px;text-decoration:none;box-shadow:var(--sh)}
 .hx-g b{display:block;font-size:13.5px}
 .hx-card{position:absolute;right:28px;bottom:28px;width:330px;background:rgba(251,250,244,.94);backdrop-filter:blur(12px);border-radius:24px;padding:22px 22px 18px;box-shadow:var(--sh)}
 .hx-card b{display:block;font:600 19px/1.1 var(--serif);color:var(--forest);margin-bottom:12px}
@@ -319,14 +348,10 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .mbar{display:none}
 
 /* responsive */
-@media (max-width:1180px){.nv-links a{padding:10px 10px}.nv-call span{display:none}}
+@media (max-width:1240px){.nv-links a{padding:10px 9px}.nv-ct{display:none}.nv-in{gap:18px}}
 @media (max-width:1024px){
- .nv-links,.nv-call,.nv-cta{display:none}.nv-burger{display:flex}
- .nv-in{flex-wrap:wrap;border-radius:28px}
- .mnav{display:flex;flex-direction:column;max-width:1240px;margin:8px auto 0;background:var(--paper);border-radius:24px;box-shadow:0 18px 40px -24px rgba(16,41,27,.5);overflow:hidden;max-height:0;padding:0 18px;transition:max-height .4s,padding .4s}
- .mnav.open{max-height:600px;padding:10px 18px 20px}
- .mnav>a:not(.b){padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700;font-size:17px}
- .mnav .b{margin-top:12px}
+ .nv-links,.nv-cta{display:none}.nv-burger{display:flex}.nv-r{margin-left:auto;gap:10px}.nv-ct{display:none}
+ .ut-h{display:none}.ut-in{justify-content:center}
  .hx-card{display:none}
  .wy-g,.rvw-g,.qt-g,.ab-g{grid-template-columns:1fr;gap:44px}
  .ab-big{position:static;display:flex;align-items:flex-end;gap:14px}.ab-big span{margin:0 0 20px}
@@ -338,12 +363,14 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 @media (max-width:720px){
  body{font-size:16px;padding-bottom:76px}
  .w{width:calc(100% - 32px)}
- .nv{top:10px;padding:0 10px}.nv .lgc{--h:48px}.nv-in{padding:6px 6px 6px 14px}.nv-burger{width:44px;height:44px}
+ .ut{font-size:12px}.ut-in{padding:0 12px;min-height:34px}
+ .nv{position:relative;left:0;right:0;top:0;background:var(--forest);color:#fff}.nv-in{padding:10px 16px;border:0}.nv .lgc{--h:54px}.nv.stuck .lgc{--h:46px}.nv.stuck .nv-in{padding:8px 16px}.nv-ci{width:44px;height:44px}
+ .hx{padding-top:8px}
  .hx{padding:8px 8px 0}
  .hx-frame{min-height:0;border-radius:24px;flex-direction:column;align-items:stretch}
  .hx-img{position:relative;height:300px;z-index:0;object-position:62% 100%}
  .hx-shade{display:none}
- .hx-copy{background:var(--forest);padding:30px 20px 34px}
+ .hx-copy{background:var(--forest);padding:30px 20px 34px}.hx-shade{display:none}
  .hx h1{font-size:36px}.hx h1 .ln{display:inline}
  .hx-copy>p{font-size:16.5px;margin:16px 0 22px}
  .hx-btns .b{flex:1 1 100%}
@@ -387,6 +414,7 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 
 @media (max-width:1024px){.wy-seal{right:10px}}
 @media (max-width:420px){.b{white-space:normal;text-align:center;line-height:1.25}.w{width:calc(100% - 24px)}.hx h1{font-size:32px}.qz-opts span{font-size:12.5px;padding:12px 6px}.cv-panel{padding:24px 16px}.cc small{font-size:12.5px}}
+@media (max-width:420px){.mbar .b{white-space:nowrap;padding:14px 8px;font-size:14px;gap:6px}}
 
 </style>
 </head>
@@ -422,15 +450,25 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 </svg>
 
 <a class="skip" href="#main">Skip to content</a>
+<div class="ut"><div class="ut-in">
+  <span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Serving Livonia, Canton, Plymouth &amp; Westland since 2012</span>
+  <span class="ut-h"><svg aria-hidden="true"><use href="#i-calendar"/></svg>Mon to Fri: 8 AM to 6 PM &middot; Sat: 9 AM to 1 PM</span>
+  <a href="mailto:info@maidgreenlivonia.com" class="ut-h"><svg aria-hidden="true"><use href="#i-mail"/></svg>info@maidgreenlivonia.com</a>
+</div></div>
 <header class="nv" id="nv"><div class="nv-in">
   <a class="nv-logo" href="./" aria-label="Maid Green Livonia home"><span class="lgc"><img src="https://maidgreenlivonia.com/wp-content/uploads/2025/02/MaidGreen_logo2022_RGB.png" alt="Maid Green Livonia" width="792" height="612"></span></a>
   <nav class="nv-links" aria-label="Main"><a href="https://maidgreenlivonia.com/services/">Services</a><a href="https://maidgreenlivonia.com/neighborhoods-we-serve/">Areas</a><a href="https://maidgreenlivonia.com/about-us/">About</a><a href="https://maidgreenlivonia.com/blog/">Blog</a><a href="https://maidgreenlivonia.com/contact-us/">Contact</a></nav>
-  <a class="nv-call" href="tel:+17346486243"><svg aria-hidden="true"><use href="#i-phone"/></svg><span>734-648-6243</span></a>
-  <a class="b b-lime nv-cta" href="#quote">Free Quote <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  <button class="nv-burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
+  <div class="nv-r">
+    <a class="nv-call" href="tel:+17346486243"><span class="nv-ci"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><span class="nv-ct"><small>Call us today</small>734-648-6243</span></a>
+    <a class="b b-lime nv-cta" href="#quote">Get a Free Quote <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <button class="nv-burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+<div class="mnav" id="mnav" aria-hidden="true">
+  <nav class="mnav-l" aria-label="Mobile"><a href="https://maidgreenlivonia.com/services/">Services</a><a href="https://maidgreenlivonia.com/neighborhoods-we-serve/">Areas</a><a href="https://maidgreenlivonia.com/about-us/">About</a><a href="https://maidgreenlivonia.com/blog/">Blog</a><a href="https://maidgreenlivonia.com/contact-us/">Contact</a></nav>
+  <div class="mnav-b"><a class="b b-lime b-xl" href="#quote">Get a Free Quote <svg aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="b b-glass b-xl" href="tel:+17346486243"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 734-648-6243</a></div>
+  <p class="mnav-h"><svg aria-hidden="true"><use href="#i-calendar"/></svg>Mon to Fri: 8 AM to 6 PM &middot; Sat: 9 AM to 1 PM</p>
 </div>
-<div class="mnav" id="mnav"><a href="https://maidgreenlivonia.com/services/">Services</a><a href="https://maidgreenlivonia.com/neighborhoods-we-serve/">Areas</a><a href="https://maidgreenlivonia.com/about-us/">About</a><a href="https://maidgreenlivonia.com/blog/">Blog</a><a href="https://maidgreenlivonia.com/contact-us/">Contact</a><a class="b b-lime" href="#quote">Get a Free Quote <svg aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="b b-line" href="tel:+17346486243"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 734-648-6243</a></div>
-</header>
 
 <main id="main">
 <section class="hx" aria-labelledby="hx-h">
@@ -613,13 +651,14 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 (function(){
 var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'}):null;
 document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
-var mbar=document.getElementById('mbar');
-function onS(){mbar.classList.toggle('show',window.scrollY>500)}
-window.addEventListener('scroll',onS,{passive:true});onS();
+var mbar=document.getElementById('mbar'),nv=document.getElementById('nv'),hx=document.querySelector('.hx');
+function onS(){var y=window.scrollY;mbar.classList.toggle('show',y>500);var lim=window.innerWidth<=720?120:(hx?hx.offsetTop+hx.offsetHeight*.55:300);nv.classList.toggle('stuck',y>lim)}
+window.addEventListener('scroll',onS,{passive:true});window.addEventListener('resize',onS);onS();
 var b=document.getElementById('burger'),m=document.getElementById('mnav');
-b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',o?'false':'true');m.classList.toggle('open',!o)});
-m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){b.setAttribute('aria-expanded','false');m.classList.remove('open')})});
-
+function setM(o){b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Close menu':'Open menu');m.classList.toggle('open',o);m.setAttribute('aria-hidden',o?'false':'true');document.body.classList.toggle('menu-open',o)}
+b.addEventListener('click',function(){setM(b.getAttribute('aria-expanded')!=='true')});
+m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setM(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')setM(false)});
 // services carousel
 var tr=document.getElementById('svTrack'),bar=document.getElementById('svBar');
 function step(){var c=tr.querySelector('.sc');return c?c.getBoundingClientRect().width+22:340}
