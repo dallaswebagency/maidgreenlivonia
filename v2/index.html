@@ -95,11 +95,11 @@ body.menu-open .nv .nv-burger{background:transparent;border-color:rgba(255,255,2
 /* hero */
 .hx{padding:12px 12px 0;background:var(--paper)}
 .hx-frame{position:relative;border-radius:32px;overflow:hidden;min-height:min(100vh - 64px,860px);display:flex;align-items:flex-end;isolation:isolate}
-.hx-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 30%;z-index:-2;animation:hxz 14s ease-out both}
+.hx-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 30%;z-index:-2;animation:hxz 14s ease-out both}
 @keyframes hxz{from{transform:scale(1.12)}to{transform:scale(1)}}
-.hx-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(16,41,27,.7) 0%,rgba(16,41,27,0) 22%),linear-gradient(90deg,rgba(16,41,27,.88) 0%,rgba(16,41,27,.55) 38%,rgba(16,41,27,0) 65%),linear-gradient(0deg,rgba(16,41,27,.6),transparent 40%)}
-.hx-copy{position:relative;color:#fff;padding:170px clamp(24px,5vw,72px) 72px;max-width:920px}
-.hx h1{font-size:clamp(40px,5.4vw,78px);line-height:.98}
+.hx-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(16,41,27,.7) 0%,rgba(16,41,27,0) 22%),linear-gradient(90deg,rgba(16,41,27,.92) 0%,rgba(16,41,27,.7) 35%,rgba(16,41,27,0) 58%),linear-gradient(0deg,rgba(16,41,27,.6),transparent 40%)}
+.hx-copy{position:relative;color:#fff;padding:170px clamp(24px,5vw,72px) 72px;max-width:min(46vw,680px);box-sizing:content-box}
+.hx h1{font-size:clamp(38px,4.3vw,64px);line-height:1}
 .hx h1 .ln{display:block}
 .hx h1 em{color:var(--lime);font-weight:500}
 .hx-copy>p{font-size:19px;color:#e2eedd;margin:22px 0 32px;max-width:46ch}
@@ -415,6 +415,8 @@ body.menu-open .nv .nv-burger{background:transparent;border-color:rgba(255,255,2
 @media (max-width:1024px){.wy-seal{right:10px}}
 @media (max-width:420px){.b{white-space:normal;text-align:center;line-height:1.25}.w{width:calc(100% - 24px)}.hx h1{font-size:32px}.qz-opts span{font-size:12.5px;padding:12px 6px}.cv-panel{padding:24px 16px}.cc small{font-size:12.5px}}
 @media (max-width:420px){.mbar .b{white-space:nowrap;padding:14px 8px;font-size:14px;gap:6px}}
+
+@media (min-width:721px) and (max-width:1100px){.hx-copy{max-width:none;padding-right:clamp(24px,5vw,72px)}.hx-shade{background:linear-gradient(0deg,rgba(16,41,27,.95) 0%,rgba(16,41,27,.75) 55%,rgba(16,41,27,.2) 100%)}.hx-img{object-position:50% 30%}}
 
 </style>
 </head>
