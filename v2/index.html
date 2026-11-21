@@ -111,19 +111,14 @@ body.menu-open .nv .nv-burger{background:transparent;border-color:rgba(255,255,2
 .hx-card ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .hx-card li{display:flex;gap:10px;align-items:center;font-weight:600;font-size:14.5px}
 .hx-card li svg{width:24px;height:24px;padding:5px;border-radius:50%;background:var(--green);color:#fff;stroke-width:2.6}
-.mq{overflow:hidden;background:var(--lime);margin:12px -12px 0;padding:18px 0}
-.mq-t{display:flex;gap:44px;width:max-content;animation:mq 34s linear infinite}
-.mq span{display:inline-flex;align-items:center;gap:14px;font:600 26px/1 var(--serif);color:var(--forest);white-space:nowrap}
-.mq span svg{color:var(--green)}
-@keyframes mq{to{transform:translateX(-50%)}}
 
 /* services carousel */
-.sv{padding:110px 0 90px}
+.sv{padding:100px 0 90px}
 .sv-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
 .sv-ctrl{display:flex;gap:10px;align-items:center}
 .ar{width:54px;height:54px;border-radius:50%;border:1.5px solid var(--line);background:#fff;color:var(--forest);display:grid;place-items:center;cursor:pointer;font-size:19px;transition:background .25s,color .25s,border-color .25s}
 .ar:hover{background:var(--forest);color:var(--lime);border-color:var(--forest)}
-.sv-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:max(20px,(100% - 1240px)/2);padding:10px max(20px,(100% - 1240px)/2) 30px;scrollbar-width:none}
+.sv-track{display:flex;gap:22px;overflow-x:auto;scroll-padding-left:max(20px,(100% - 1240px)/2);padding:10px max(20px,(100% - 1240px)/2) 30px;scrollbar-width:none}
 .sv-track::-webkit-scrollbar{display:none}
 .sc{flex:0 0 340px;scroll-snap-align:start}
 .sc a{display:flex;flex-direction:column;height:100%;background:#fff;border-radius:28px;overflow:hidden;text-decoration:none;border:1px solid var(--line);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,border-color .4s}
@@ -375,7 +370,6 @@ body.menu-open .nv .nv-burger{background:transparent;border-color:rgba(255,255,2
  .hx-copy>p{font-size:16.5px;margin:16px 0 22px}
  .hx-btns .b{flex:1 1 100%}
  .hx-g{top:auto;bottom:auto;right:12px;top:248px;padding:8px 12px}.hx-g .g{width:22px;height:22px}
- .mq{margin:8px -8px 0;padding:14px 0}.mq span{font-size:20px}
  .sv,.wy,.rvw,.cv,.qt,.fqs,.pr{padding:72px 0}
  .sv-ctrl .b{display:none}.ar{width:48px;height:48px}
  .sc{flex-basis:82%}.sc-img{height:220px}
@@ -418,14 +412,15 @@ body.menu-open .nv .nv-burger{background:transparent;border-color:rgba(255,255,2
 
 @media (min-width:721px) and (max-width:1100px){.hx-copy{max-width:none;padding-right:clamp(24px,5vw,72px)}.hx-shade{background:linear-gradient(0deg,rgba(16,41,27,.95) 0%,rgba(16,41,27,.75) 55%,rgba(16,41,27,.2) 100%)}.hx-img{object-position:50% 30%}}
 
-/* hero: photo only on the right, text on solid left side (never overlaps people) */
+/* hero: full photo, light fade + slight blur only behind the text */
 @media (min-width:1101px){
- .hx-frame{background:linear-gradient(135deg,#10291B,#173a26)}
- .hx-img{left:auto;right:0;width:60%;object-position:82% 30%;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%);mask-image:linear-gradient(90deg,transparent 0%,#000 22%)}
- .hx-shade{background:linear-gradient(180deg,rgba(16,41,27,.6) 0%,rgba(16,41,27,0) 20%),linear-gradient(0deg,rgba(16,41,27,.35),transparent 30%)}
- .hx-copy{max-width:min(42vw,620px)}
- .hx h1{font-size:clamp(40px,3.9vw,62px)}
- .hx-frame::before{content:"";position:absolute;left:-120px;bottom:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(171,231,99,.18),transparent 65%);z-index:-1}
+ .hx-frame{min-height:min(100vh - 64px,860px,60vw)}
+ .hx-img{object-position:42% 35%}
+ .hx-shade{background:linear-gradient(180deg,rgba(16,41,27,.55) 0%,rgba(16,41,27,0) 18%),linear-gradient(90deg,rgba(16,41,27,.62) 0%,rgba(16,41,27,.38) 32%,rgba(16,41,27,0) 52%)}
+ .hx-frame::before{content:"";position:absolute;inset:0;z-index:-1;backdrop-filter:blur(2.5px);-webkit-backdrop-filter:blur(2.5px);-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 30%,transparent 50%);mask-image:linear-gradient(90deg,#000 0%,#000 30%,transparent 50%)}
+ .hx-copy{max-width:min(40vw,640px)}
+ .hx h1{font-size:clamp(40px,3.8vw,62px);text-shadow:0 2px 24px rgba(16,41,27,.45)}
+ .hx-copy>p,.hx-ticks li{text-shadow:0 1px 10px rgba(16,41,27,.6)}
 }
 .hx-ticks{list-style:none;margin:28px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.16);display:flex;flex-wrap:wrap;gap:10px 22px}
 .hx-ticks li{display:flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:#e2eedd}
@@ -440,6 +435,25 @@ body.menu-open .nv .nv-burger{background:transparent;border-color:rgba(255,255,2
  .hx-copy{padding:40px 40px 48px;max-width:none}
  .hx-g{top:360px}
 }
+
+/* quick & easy motion */
+.pr-dot{fill:var(--lime);stroke:var(--forest);stroke-width:3}
+.pr-dot.d2{fill:var(--sun)}
+.ps.in{animation:psf 6s ease-in-out infinite}
+.ps.in:nth-child(3){animation-delay:-2s}.ps.in:nth-child(4){animation-delay:-4s}
+@keyframes psf{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.ps:hover{animation-play-state:paused}
+.ps-i{position:relative}
+.ps-i::before,.ps-i::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:2px solid var(--lime);opacity:0;animation:psr 3s ease-out infinite}
+.ps-i::after{animation-delay:1.5s}
+@keyframes psr{0%{transform:scale(.85);opacity:.8}100%{transform:scale(1.35);opacity:0}}
+.ps-i svg{animation:psi 4s ease-in-out infinite}
+@keyframes psi{0%,100%{transform:rotate(0) scale(1)}50%{transform:rotate(-8deg) scale(1.08)}}
+.pr::before,.pr::after{content:"";position:absolute;border-radius:50%;pointer-events:none;animation:prb 14s ease-in-out infinite}
+.pr::before{width:340px;height:340px;left:-100px;top:-80px;background:radial-gradient(circle,rgba(171,231,99,.35),transparent 65%)}
+.pr::after{width:420px;height:420px;right:-140px;bottom:-160px;background:radial-gradient(circle,rgba(44,122,68,.22),transparent 65%);animation-delay:-7s}
+@keyframes prb{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+.pr .w{position:relative;z-index:1}
 
 </style>
 </head>
@@ -509,7 +523,6 @@ body.menu-open .nv .nv-burger{background:transparent;border-color:rgba(255,255,2
     </div>
     <a class="hx-g rv d3" href="https://maps.app.goo.gl/dz457c9LgQ96wKic7" target="_blank" rel="noopener"><svg class="g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2A11.9 11.9 0 0 1 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg><span><b>Google reviews</b><span class="stars" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span></span></a>
   </div>
-  <div class="mq" aria-hidden="true"><div class="mq-t"><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>House Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Deep Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Move In Out Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Office Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Recurring Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Same-Day Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Apartment Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Carpet Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Window Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>House Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Deep Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Move In Out Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Office Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Recurring Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Same-Day Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Apartment Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Carpet Cleaning</span><span><svg aria-hidden="true"><use href="#i-leaf"/></svg>Window Cleaning</span></div></div>
 </section>
 
 <section class="sv" id="services" aria-labelledby="sv-h"><div class="w">
@@ -529,7 +542,7 @@ body.menu-open .nv .nv-burger{background:transparent;border-color:rgba(255,255,2
     <p class="rv d2">Book online, call or email us to schedule your cleaning service.</p>
   </div>
   <div class="pr-steps">
-    <svg class="pr-path" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M60 80 C 250 -10, 380 140, 500 60 S 760 -10, 940 80"/></svg>
+    <svg class="pr-path" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path id="prp" d="M60 80 C 250 -10, 380 140, 500 60 S 760 -10, 940 80"/><circle class="pr-dot" r="7"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#prp"/></animateMotion></circle><circle class="pr-dot d2" r="5"><animateMotion dur="6s" begin="-3s" repeatCount="indefinite"><mpath href="#prp"/></animateMotion></circle></svg>
     <div class="ps rv"><span class="ps-i"><svg aria-hidden="true"><use href="#i-calendar"/></svg></span><b>Free Quote</b><p>Tell us about your home and choose the date you want.</p><a href="#quote">Book online <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     <div class="ps rv d1"><span class="ps-i"><svg aria-hidden="true"><use href="#i-sparkle"/></svg></span><b>Clean</b><p>Our seasoned team of full-time cleaners will transform your home.</p><a href="tel:+17346486243">Call 734-648-6243 <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     <div class="ps rv d2"><span class="ps-i"><svg aria-hidden="true"><use href="#i-sun"/></svg></span><b>Relax</b><p>Sit back and enjoy how amazing your home or business looks now.</p><a href="mailto:info@maidgreenlivonia.com">Email us <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
@@ -681,17 +694,27 @@ function setM(o){b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute
 b.addEventListener('click',function(){setM(b.getAttribute('aria-expanded')!=='true')});
 m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setM(false)})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')setM(false)});
-// services carousel
+// services carousel: slow continuous auto-scroll, loops seamlessly
 var tr=document.getElementById('svTrack'),bar=document.getElementById('svBar');
+var orig=[].slice.call(tr.children);orig.forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');k.querySelectorAll('a').forEach(function(a){a.tabIndex=-1});k.classList.add('in');tr.appendChild(k)});
+function half(){return tr.scrollWidth/2}
 function step(){var c=tr.querySelector('.sc');return c?c.getBoundingClientRect().width+22:340}
-document.getElementById('svPrev').addEventListener('click',function(){tr.scrollBy({left:-step(),behavior:'smooth'})});
-document.getElementById('svNext').addEventListener('click',function(){tr.scrollBy({left:step(),behavior:'smooth'})});
-function sb(){var max=tr.scrollWidth-tr.clientWidth;var vis=tr.clientWidth/tr.scrollWidth;bar.style.width=Math.max(vis*100,12)+(max>0?(tr.scrollLeft/max)*(100-Math.max(vis*100,12)):0)+'%'}
-tr.addEventListener('scroll',sb,{passive:true});window.addEventListener('resize',sb);sb();
+var paused=false,hold=0,pos=0,last=0,reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+function svWrap(){var h=half();if(tr.scrollLeft>=h)tr.scrollLeft-=h;else if(tr.scrollLeft<=0&&h)tr.scrollLeft+=h;pos=tr.scrollLeft}
+function sb(){var h=half();var vis=Math.min(1,tr.clientWidth/h);var p=h?(tr.scrollLeft%h)/h:0;bar.style.width=Math.max(vis*100,12)+'%';bar.style.transform='translateX('+(p*(100/Math.max(vis,.12)-100))+'%)'}
+function tick(t){var dt=last?Math.min(t-last,50):16;last=t;if(!paused&&!reduce&&Date.now()>hold){pos+=dt*0.035;tr.scrollLeft=pos;svWrap()}else{pos=tr.scrollLeft}sb();requestAnimationFrame(tick)}
+requestAnimationFrame(tick);
+tr.addEventListener('mouseenter',function(){paused=true});tr.addEventListener('mouseleave',function(){paused=false});
+tr.addEventListener('touchstart',function(){hold=Date.now()+4000},{passive:true});
+tr.addEventListener('focusin',function(){paused=true});tr.addEventListener('focusout',function(){paused=false});
+function nudge(d){hold=Date.now()+2500;tr.scrollBy({left:d*step(),behavior:'smooth'});setTimeout(svWrap,600)}
+document.getElementById('svPrev').addEventListener('click',function(){if(tr.scrollLeft<step())tr.scrollLeft+=half();nudge(-1)});
+document.getElementById('svNext').addEventListener('click',function(){nudge(1)});
 var down=false,sx=0,sl=0;
-tr.addEventListener('mousedown',function(e){down=true;sx=e.pageX;sl=tr.scrollLeft;tr.style.scrollSnapType='none'});
-window.addEventListener('mouseup',function(){if(down){down=false;tr.style.scrollSnapType=''}});
+tr.addEventListener('mousedown',function(e){down=true;sx=e.pageX;sl=tr.scrollLeft});
+window.addEventListener('mouseup',function(){if(down){down=false;svWrap()}});
 tr.addEventListener('mousemove',function(e){if(!down)return;e.preventDefault();tr.scrollLeft=sl-(e.pageX-sx)});
+tr.addEventListener('scroll',function(){if(paused||Date.now()<=hold)svWrap()},{passive:true});
 
 // why feature tabs (auto rotate)
 var tabs=[].slice.call(document.querySelectorAll('.ft2')),ti=0,tt;
