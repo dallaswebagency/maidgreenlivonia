@@ -8,7 +8,7 @@
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/hero-team.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/hero-crew.webp" type="image/webp">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HouseCleaningService","name":"Maid Green Livonia","url":"https://maidgreenlivonia.com/","telephone":"+1-734-648-6243","email":"info@maidgreenlivonia.com","image":"https://maidgreenlivonia.com/wp-content/uploads/mg-home/logo-160.webp","areaServed":["Livonia, MI","Canton, MI","Plymouth, MI","Westland, MI"],"openingHours":["Mo-Fr 08:00-18:00","Sa 09:00-13:00"],"foundingDate":"2012"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What areas do you serve in Livonia, MI?","acceptedAnswer":{"@type":"Answer","text":"We serve all neighborhoods in Livonia and surrounding areas."}},{"@type":"Question","name":"Are your cleaning products harmful to pets?","acceptedAnswer":{"@type":"Answer","text":"We use eco-friendly, non-toxic products safe for pets and humans."}},{"@type":"Question","name":"How can I book a cleaning service?","acceptedAnswer":{"@type":"Answer","text":"Book online, call or email us to schedule your cleaning service."}},{"@type":"Question","name":"Do you offer one-time cleaning services?","acceptedAnswer":{"@type":"Answer","text":"We offer one-time and recurring cleaning services to fit your needs."}},{"@type":"Question","name":"What if I want more than the cleaning?","acceptedAnswer":{"@type":"Answer","text":"Our work is guaranteed; we will make it suitable if you are unsatisfied with our service."}}]}</script>
 <style>
@@ -88,7 +88,7 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
 .hero{background:var(--forest)}
 .hero-g{display:grid;grid-template-columns:1fr 1.08fr;min-height:min(calc(100vh - 144px),780px)}
 .hero-pic{position:relative;overflow:hidden;min-height:560px;order:2}
-.hp-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:42% 40%;animation:kb 18s ease-out both}
+.hp-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%;animation:kb 18s ease-out both}
 @keyframes kb{from{transform:scale(1.1)}to{transform:scale(1)}}
 .hero-pic::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,transparent 75%,rgba(16,41,27,.35));pointer-events:none}
 .hp-g{position:absolute;right:28px;top:28px;z-index:2;display:flex;align-items:center;gap:12px;background:#fff;padding:12px 18px;border-radius:16px;box-shadow:var(--sh);text-decoration:none}
@@ -382,14 +382,14 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
 .posts{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:22px}
 .post{position:relative;display:grid;grid-template-columns:44% 1fr;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;text-decoration:none;transition:transform .35s,box-shadow .35s,border-color .35s}
 .post:hover{transform:translateY(-5px);box-shadow:var(--sh);border-color:var(--leaf)}
-.post>img{width:100%;height:100%!important;aspect-ratio:auto;object-fit:cover;object-position:center;transition:transform .8s}
-.post:hover>img{transform:scale(1.05)}
+.post>img{width:calc(100% - 14px);height:auto!important;aspect-ratio:16/9;object-fit:cover;margin:14px 0 14px 14px;border-radius:16px;align-self:center;transition:transform .8s}
+.post:hover>img{transform:scale(1.03)}
 .pt{font:600 19px/1.3 var(--serif);padding:22px 22px 10px;align-self:end}
 .post .tlink{margin:0 22px 22px;align-self:start;justify-self:start}
 .post{grid-template-rows:auto auto}
 .post>img{grid-row:1/3}
 .post-big{grid-row:1/3;grid-template-columns:1fr;grid-template-rows:auto 1fr auto}
-.post-big>img{grid-row:auto;height:auto!important;aspect-ratio:16/9}
+.post-big>img{grid-row:auto;height:auto!important;aspect-ratio:16/9;width:100%;margin:0;border-radius:0}
 .post-big .pt{font-size:clamp(22px,2.2vw,28px);padding:26px 28px 12px;align-self:start}
 .post-big .tlink{margin:0 28px 28px}
 
@@ -476,7 +476,7 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
  .hoods{grid-template-columns:1fr;padding:20px}
  .cta-main{padding:36px 22px}.cta-side{margin:0 14px 14px;padding:22px 18px}.cta-strip{padding:20px 22px}.cta-btns .btn{flex:1 1 100%}
  .qf fieldset{grid-template-columns:1fr 1fr}.qf fieldset>label{grid-column:span 1}.qf fieldset>label.half{grid-column:span 1}
- .post{grid-template-columns:1fr}.post>img{grid-row:auto;height:auto!important;aspect-ratio:16/9}
+ .post{grid-template-columns:1fr}.post>img{grid-row:auto;height:auto!important;aspect-ratio:16/9;width:100%;margin:0;border-radius:0}
  .ft-cta-b .btn{flex:1 1 100%}.ft-badges{grid-template-columns:1fr}
  .q-box{padding:24px 20px}
  .qf fieldset{grid-template-columns:1fr}
@@ -546,7 +546,7 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
 <section class="hero" aria-labelledby="hero-h">
   <div class="hero-g">
     <div class="hero-pic">
-      <picture><source srcset="assets/hero-team.webp" type="image/webp"><img class="hp-img" src="assets/hero-team.jpg" alt="Maid Green cleaning team arriving at a home with supplies" width="1678" height="937" fetchpriority="high"></picture>
+      <picture><source srcset="assets/hero-crew.webp" type="image/webp"><img class="hp-img" src="assets/hero-crew.jpg" alt="Maid Green cleaners walking up to a home with a vacuum, mops and supplies" width="1437" height="1095" fetchpriority="high"></picture>
       <a class="hp-g" href="https://maps.app.goo.gl/dz457c9LgQ96wKic7" target="_blank" rel="noopener"><svg class="g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2A11.9 11.9 0 0 1 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg><span><b>Google reviews</b><span class="stars" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span></span></a>
     </div>
     <div class="hero-panel">
