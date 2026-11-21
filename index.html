@@ -63,9 +63,10 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
 .us{display:none}
 .hdr{position:sticky;top:0;z-index:50;background:rgba(251,250,244,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
 .hdr.sc{border-color:var(--line);box-shadow:0 8px 30px -20px rgba(16,41,27,.3)}
-.hdr-in{display:flex;align-items:center;gap:28px;min-height:82px}
+.hdr-in{display:flex;align-items:center;gap:28px;min-height:104px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand img{width:auto;height:58px}
+.lgc{--h:84px;display:block;width:calc(var(--h)*1.2443);height:var(--h);overflow:hidden;flex:none}
+.lgc img{height:calc(var(--h)*1.3846);width:auto;max-width:none;margin:calc(var(--h)*-.19) 0 0 calc(var(--h)*-.2738)}
 .brand-t{font:600 22px/1 var(--serif);color:var(--forest);border-left:1px solid var(--line);padding-left:12px}
 .brand-t small{display:block;font:700 10.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:5px}
 .nav{display:flex;gap:4px;margin-left:auto}
@@ -85,7 +86,7 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
 /* hero: quote-first split */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .hero{background:var(--forest)}
-.hero-g{display:grid;grid-template-columns:1.08fr 1fr;min-height:min(calc(100vh - 122px),780px)}
+.hero-g{display:grid;grid-template-columns:1.08fr 1fr;min-height:min(calc(100vh - 144px),780px)}
 .hero-pic{position:relative;overflow:hidden;min-height:560px}
 .hp-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:45% 35%;animation:kb 18s ease-out both}
 @keyframes kb{from{transform:scale(1.1)}to{transform:scale(1)}}
@@ -310,7 +311,7 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
 /* footer */
 .ft{background:var(--forest);color:#c4d6bd;padding:80px 0 0;font-size:15px}
 .ft-top{display:grid;grid-template-columns:1.5fr 1fr 1.2fr 1fr 1.4fr;gap:36px;padding-bottom:50px}
-.ft-brand img{height:76px;width:auto;background:#fff;border-radius:16px;padding:8px 12px;margin-bottom:18px}
+.ft-brand .lgc{--h:110px;margin-bottom:22px}
 .ft-brand p{margin-bottom:22px}
 .ft h4{font:700 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:18px}
 .ft ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
@@ -343,7 +344,7 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
  body{font-size:16px;padding-bottom:76px}
  .wrap{width:calc(100% - 32px)}
  .util .hide{display:none}.ul{display:none}.us{display:inline}
- .hdr-in{min-height:70px}.brand img{height:46px}.brand-t{font-size:18px}
+ .hdr-in{min-height:78px}.brand .lgc{--h:60px}.brand-t{font-size:18px}
  .lead{font-size:17px}
  .hero-pic{aspect-ratio:4/3.3}
  .hp-g{right:12px;top:12px;padding:8px 12px}.hp-g .g{width:22px;height:22px}
@@ -419,7 +420,7 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
   <a class="u" href="tel:+17346486243"><svg aria-hidden="true"><use href="#i-phone"/></svg>734-648-6243</a>
 </div></div>
 <header class="hdr" id="hdr"><div class="wrap hdr-in">
-  <a class="brand" href="./" aria-label="Maid Green Livonia home"><img src="assets/logo.png" alt="Maid Green Livonia" width="120" height="96"></a>
+  <a class="brand" href="./" aria-label="Maid Green Livonia home"><span class="lgc"><img src="https://maidgreenlivonia.com/wp-content/uploads/2025/02/MaidGreen_logo2022_RGB.png" alt="Maid Green Livonia" width="792" height="612"></span></a>
   <nav class="nav" aria-label="Main">
     <a href="https://maidgreenlivonia.com/services/">Services</a><a href="https://maidgreenlivonia.com/neighborhoods-we-serve/">Areas</a><a href="https://maidgreenlivonia.com/about-us/">About</a><a href="https://maidgreenlivonia.com/blog/">Blog</a><a href="https://maidgreenlivonia.com/contact-us/">Contact</a>
   </nav>
@@ -604,7 +605,7 @@ a.u{font-weight:700;color:#fff;white-space:nowrap}
 
 <footer class="ft"><div class="wrap">
   <div class="ft-top">
-    <div class="ft-brand"><img src="assets/logo.png" alt="Maid Green Livonia" width="110" height="88" loading="lazy"><p>Eco-friendly house and office cleaning. Serving Livonia, Canton, Plymouth and Westland since 2012.</p><a class="btn btn-lime" href="#quote">Get a Free Quote <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    <div class="ft-brand"><span class="lgc"><img src="https://maidgreenlivonia.com/wp-content/uploads/2025/02/MaidGreen_logo2022_RGB.png" alt="Maid Green Livonia" width="792" height="612" loading="lazy"></span><p>Eco-friendly house and office cleaning. Serving Livonia, Canton, Plymouth and Westland since 2012.</p><a class="btn btn-lime" href="#quote">Get a Free Quote <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     <div><h4>Company</h4><ul><li><a href="https://maidgreenlivonia.com/about-us/">About us</a></li><li><a href="https://maidgreenlivonia.com/about-us/cleaning-process/">Cleaning process</a></li><li><a href="https://maidgreenlivonia.com/blog/">Blog</a></li><li><a href="https://maidgreenlivonia.com/employment/">Employment</a></li><li><a href="https://maidgreenlivonia.com/contact-us/">Contact us</a></li></ul></div>
     <div><h4>Services</h4><ul><li><a href="https://maidgreenlivonia.com/services/house-cleaning/">House cleaning</a></li><li><a href="https://maidgreenlivonia.com/services/deep-cleaning/">Deep cleaning</a></li><li><a href="https://maidgreenlivonia.com/services/move-in-move-out-cleaning-livonia/">Move-in / move-out cleaning</a></li><li><a href="https://maidgreenlivonia.com/services/office-cleaning/">Office cleaning</a></li><li><a href="https://maidgreenlivonia.com/services/">All services</a></li></ul></div>
     <div><h4>Areas</h4><ul><li><a href="https://maidgreenlivonia.com/livonia/">Livonia</a></li><li><a href="https://maidgreenlivonia.com/cleaning-services-in-canton/">Canton</a></li><li><a href="https://maidgreenlivonia.com/cleaning-services-in-plymouth/">Plymouth</a></li><li><a href="https://maidgreenlivonia.com/cleaning-services-in-westland-michigan/">Westland</a></li><li><a href="https://maidgreenlivonia.com/neighborhoods-we-serve/">Neighborhoods</a></li></ul></div>
